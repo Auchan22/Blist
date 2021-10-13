@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+    <link rel="icon" href="./img/icono.png" type="image/jpeg">
+
+    
+    <!--Meta Tags Inicio-->
+    <meta name="description" content="Blist, tu lista de supermercado digital">
+    <meta name="keywordas" content="Supermercado, App, Market, Shop, Shoppin">
+    <meta name="author" content="Agustín Surila Soto">
+    <meta name="copyright" content="Agustín Surila Soto, 2021">
+
+    <!--Meta Robots INICIO-->
+    <meta name="robots" content="index follow">
+    <!--Meta Robots FIN-->
+
+    <!--Debugger OpenGraph INICIO-->
+    <meta property="og:title" content="Blist">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blist-market.web.app/">
+    <meta property="og:image" content="./img/carrito.jpg">
+    <meta property="og:description" content="Blist, tu lista de supermercado digital">
+    <meta property="og:locale" content="es_ES">
+    <meta property="fb:app_id" content="10154316802799413">
+    <!--Debugger OpenGraph FIN-->
+
+    <!--Debugger Twitter INICIO-->
+    <meta property="og:title" content="Blist">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content=https://blist-market.web.app/"">
+    <meta property="twitter:image:src" content="https://blist-market.web.app/img/carrito.jpg">
+    <meta property="twitter:image:width" content="360px">
+    <meta property="twitter:image:height" content="360px">
+    <meta property="og:description" content="Blist, tu lista de supermercado digital">
+    <meta property="og:locale" content="es_ES">
+    <meta property="twitter:creator" content="@SurilaAgus">
+    <!--Debugger Twitter FIN-->
+
+    <title>Blist</title>
+</head>
+<body id="body">
+    <!--INICIO Header-->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-content">Blist</h1>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </header>
+    <!--FIN Header-->
+
+    <!--INICIO Contenedor Maestro-->
+    <section id="container-master" >
+
+        <!--INICIO Contenedor NoCards-->
+
+        <section id="no-cards" class="">
+            <div class="container" id="no-cards">
+                <div class="no-cards">
+                    <h3>
+                        <strong>No tenes nada para comprar</strong>
+                    </h3>
+                    <i class="far fa-frown-open"></i>
+                </div>
+            </div>
+        </section>
+
+        <!--FIN Contenedor NoCards-->
+
+        <!--INICIO Contenedor Item List-->
+
+        <section id="shopping-list-tiny">
+            <div class="container-shop" id="shop-container">
+                <ul class="items list-group" id="shop-list"></ul>
+            </div>
+        </section>
+
+        <!--FIN Contenedor Item List-->
+
+        <!--INICIO Contenedor Item List PC-->
+
+        <section id="shopping-list-tiny-pc">
+            <div class="container-shop" id="shop-container-pc">
+                <ul class="items list-group" id="shop-list-pc"></ul>
+            </div>
+        </section>
+
+        <!--FIN Contenedor Item List PC-->
+
+        <!--INICIO Contenedor Item Description-->
+
+        <section id="shopping-item-description" >
+            <div class="contenedor-desc">
+                <img 
+                src="./img/sad-face.png" 
+                alt="Carita triste" 
+                width="50px" 
+                height="50px" 
+                id="itemIcono"
+                >
+
+                <h1 id="itemTitulo">Aca va un titulo</h1>
+                <p id="itemDescripcion">Aca va la descripcion</p>
+            </div>
+            <div class="container">
+                <button id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+        </section>
+
+        <!--FIN Contenedor Item Description-->
+
+        <!--INICIO Contenedor Item Description2 PC-->
+
+        <section id="shopping-item-description-pc" >
+            <div class="contenedor-desc-pc">
+                <img 
+                src="./img/sad-face.png" 
+                alt="Carita triste" 
+                width="50px" 
+                height="50px" 
+                id="itemIcono-pc"
+                >
+
+                <h1 id="itemTitulo-pc">Aca va un titulo</h1>
+                <p id="itemDescripcion-pc">Aca va la descripcion</p>
+            </div>
+            <div class="container">
+                <button id="close-btn-pc">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+        </section>
+
+        <!--FIN Contenedor Item Description2 PC-->
+
+        <!--INICIO Boton ADD-->
+
+        <section id="add-button" >
+            <div class="contenedor-btn">
+                <button
+                type="button" 
+                data-bs-toggle="modal" 
+                data-bs-target="#modal"  
+                data-bs-whatever="@getbootstrap"
+                >
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </section>
+
+        <!--FIN Boton ADD-->
+
+        <!--INICIO Modal Form-->
+
+        <section id="shoping-modal">
+            <div id="modal" class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                <strong>Agregar Producto</strong> 
+                            </h5>
+
+                            <button 
+                            type="button" 
+                            class="btn-close" 
+                            data-bs-dismiss="modal" 
+                            aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="" id="form" name="form" >
+                                <div class="mb-3">
+                                    <label 
+                                    for="titulo" 
+                                    class="col-form-label form-label"
+                                    >
+                                        <h3>Titulo: <span class="red">*</span></h3>
+                                    </label>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="titulo" 
+                                    name="titulo" 
+                                    autocomplete="off" 
+                                    required 
+                                    >
+                                    <div class="alert-msg" id="msg-title">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label 
+                                    for="select" 
+                                    class="col-form-label form-label"
+                                    >
+                                        <h3>Categorias: <span class="red">*</span></h3>
+                                    </label>
+                                    <select 
+                                    name="select" 
+                                    id="select" 
+                                    class="form-select" 
+                                    aria-label="Default select example" 
+                                    required
+                                    >
+                                        <option 
+                                        value="0" 
+                                        selected
+                                        >
+                                            Selecciona un elemento
+                                        </option>
+                                        <option value="./img/icons/vario.png">Otros...</option>
+                                        <optgroup label="Frutas">
+                                            <option value="./img/icons/fruta.png">Banana</option>
+                                            <option value="./img/icons/fruta.png">Limon</option>
+                                            <option value="./img/icons/fruta.png">Manzana</option>
+                                            <option value="./img/icons/fruta.png">Sandia</option>
+                                            <option value="./img/icons/fruta.png">Tomate</option>
+                                            <option value="./img/icons/fruta.png">Naranja</option>
+                                            <option value="./img/icons/fruta.png">Mandarina</option>
+                                            <option value="./img/icons/fruta.png">Banana</option>
+                                            <option value="./img/icons/fruta.png">Otra fruta</option>
+                                        <optgroup label="Vegetales y Verduras">
+                                            <option value="./img/icons/vegetal.png">Ajo</option>
+                                            <option value="./img/icons/vegetal.png">Lechuga</option>
+                                            <option value="./img/icons/vegetal.png">Cebolla</option>
+                                            <option value="./img/icons/vegetal.png">Papas</option>
+                                            <option value="./img/icons/vegetal.png">Pepino</option>
+                                            <option value="./img/icons/vegetal.png">Remolacha</option>
+                                            <option value="./img/icons/vegetal.png">Repollo</option>
+                                            <option value="./img/icons/vegetal.png">Zanahoria</option>
+                                            <option value="./img/icons/vegetal.png">Rucula</option>
+                                            <option value="./img/icons/vegetal.png">Morron</option>
+                                            <option value="./img/icons/vegetal.png">Otra Verdura</option>
+                                        </optgroup>
+                                        <optgroup label="Carnes">
+                                            <option value="./img/icons/carne.png">Carne de ternera</option>
+                                            <option value="./img/icons/carne.png">Carne de cerdo</option>
+                                            <option value="./img/icons/carne.png">Nalga</option>
+                                            <option value="./img/icons/carne.png">Bola de lomo</option>
+                                            <option value="./img/icons/carne.png">Peceto</option>
+                                            <option value="./img/icons/carne.png">Bife de chorizo</option>
+                                            <option value="./img/icons/carne.png">Peyeto</option>
+                                            <option value="./img/icons/carne.png">Vacio</option>
+                                            <option value="./img/icons/carne.png">Paleta</option>
+                                            <option value="./img/icons/carne.png">Otra carne</option>
+                                        </optgroup>
+                                        <optgroup label="Aves">
+                                            <option value="./img/icons/aves.png">Muslo de Pollo</option>
+                                            <option value="./img/icons/aves.png">Pollo entero</option>
+                                            <option value="./img/icons/aves.png">Pechuga de pollo</option>
+                                            <option value="./img/icons/aves.png">Alitas</option>
+                                            <option value="./img/icons/aves.png">Otra carne de ave</option>
+                                        </optgroup>
+                                        <optgroup label="Pescados">
+                                            <option value="./img/icons/pescado.png">Salmon</option>
+                                            <option value="./img/icons/pescado.png">Dorado</option>
+                                            <option value="./img/icons/pescado.png">Merluza</option>
+                                            <option value="./img/icons/pescado.png">Calamar</option>
+                                            <option value="./img/icons/pescado.png">Otra carne de pescado</option>
+                                        </optgroup>
+                                        <optgroup label="Pastas">
+                                            <option value="./img/icons/pasta.png">Espqguetis</option>
+                                            <option value="./img/icons/pasta.png">Mostacholes</option>
+                                            <option value="./img/icons/pasta.png">Coditos</option>
+                                            <option value="./img/icons/pasta.png">Ravioles</option>
+                                            <option value="./img/icons/pasta.png">Ñoquis</option>
+                                            <option value="./img/icons/pasta.png">Tallarines</option>
+                                            <option value="./img/icons/pasta.png">Lasagña</option>
+                                            <option value="./img/icons/pasta.png">Canelones</option>
+                                        </optgroup>
+                                        <optgroup label="Bebidas">
+                                            <option value="./img/icons/bebida.png">Agua</option>
+                                            <option value="./img/icons/bebida.png">Infusiones</option>
+                                            <option value="./img/icons/bebida.png">Sprite</option>
+                                            <option value="./img/icons/bebida.png">Coca Cola</option>
+                                            <option value="./img/icons/bebida.png">H20</option>
+                                            <option value="./img/icons/bebida.png">7Up</option>
+                                            <option value="./img/icons/bebida.png">Pepsi</option>
+                                            <option value="./img/icons/bebida.png">Baggio</option>
+                                            <option value="./img/icons/bebida.png">Bebida alcoholica</option>
+                                        </optgroup>
+                                        <optgroup label="Harinas y granos">
+                                            <option value="./img/icons/harina.png">Harina 000</option>
+                                            <option value="./img/icons/harina.png">Harina 0000</option>
+                                            <option value="./img/icons/harina.png">Harina de almendra</option>
+                                            <option value="./img/icons/harina.png">Levadura</option>
+                                            <option value="./img/icons/harina.png">Arroz integral</option>
+                                            <option value="./img/icons/harina.png">Lentejas</option>
+                                            <option value="./img/icons/harina.png">Arvejas</option>
+                                            <option value="./img/icons/harina.png">Semillas de Lino</option>
+                                            <option value="./img/icons/harina.png">Semillas de Girasol</option>
+                                            <option value="./img/icons/harina.png">Almendras</option>
+                                            <option value="./img/icons/harina.png">Nueces</option>
+                                        </optgroup>
+                                        <optgroup label="Lacteos">
+                                            <option value="./img/icons/lacteos.png">Queso</option>
+                                            <option value="./img/icons/lacteos.png">Yogurt</option>
+                                            <option value="./img/icons/lacteos.png">Leche</option>
+                                            <option value="./img/icons/lacteos.png">Manteca</option>
+                                            <option value="./img/icons/lacteos.png">Huevos</option>
+                                            <option value="./img/icons/lacteos.png">Helado</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="alert-msg" id="msg-select">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label 
+                                    for="descripcion" 
+                                    class="col-form-label form-label">
+                                        <h3>Descripción: </h3>
+                                    </label>
+                                    <textarea 
+                                    class="form-control" 
+                                    id="descripcion" 
+                                    name="descripcion" 
+                                    autocomplete="off" 
+                                    rows="5" 
+                                    cols="10"></textarea>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <hr>
+                            <h5><span class="red">* Obligatorio</span></h5>
+                            <button 
+                            type="button" 
+                            id="submit-btn" 
+                            class="btn btn-primary float-right">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--FIN Modal Form-->
+
+        <!--INICIO Shop-Form PC-->
+
+        <section id="shoping-bar" class="">
+                <div class="bar">
+                    <div class="bar-content">
+                        <div class="bar-header">
+                            <h3 class="bar-title">
+                                <strong>Agregar Producto</strong> 
+                            </h3>
+
+                        </div>
+                        <div class="bar-body">
+                            <form class="" id="form-pc" name="form-pc" >
+                                <div class="mb-3">
+                                    <label 
+                                    for="titulo-pc" 
+                                    class="col-form-label form-label"
+                                    >
+                                        <h3>Titulo: <span class="red">*</span></h3>
+                                    </label>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="titulo-pc" 
+                                    name="titulo-pc" 
+                                    autocomplete="off" 
+                                    required 
+                                    >
+                                    <div class="alert-msg" id="msg-title-pc">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label 
+                                    for="select-pc" 
+                                    class="col-form-label form-label"
+                                    >
+                                        <h3>Categorias: <span class="red">*</span></h3>
+                                    </label>
+                                    <select 
+                                    name="select-pc" 
+                                    id="select-pc" 
+                                    class="form-select" 
+                                    aria-label="Default select example" 
+                                    required
+                                    >
+                                        <option 
+                                        value="0" 
+                                        selected
+                                        >
+                                            Selecciona un elemento
+                                        </option>
+                                        <option value="./img/icons/vario.png">Otros...</option>
+                                        <optgroup label="Frutas">
+                                            <option value="./img/icons/fruta.png">Banana</option>
+                                            <option value="./img/icons/fruta.png">Limon</option>
+                                            <option value="./img/icons/fruta.png">Manzana</option>
+                                            <option value="./img/icons/fruta.png">Sandia</option>
+                                            <option value="./img/icons/fruta.png">Tomate</option>
+                                            <option value="./img/icons/fruta.png">Naranja</option>
+                                            <option value="./img/icons/fruta.png">Mandarina</option>
+                                            <option value="./img/icons/fruta.png">Banana</option>
+                                            <option value="./img/icons/fruta.png">Otra fruta</option>
+                                        <optgroup label="Vegetales y Verduras">
+                                            <option value="./img/icons/vegetal.png">Ajo</option>
+                                            <option value="./img/icons/vegetal.png">Lechuga</option>
+                                            <option value="./img/icons/vegetal.png">Cebolla</option>
+                                            <option value="./img/icons/vegetal.png">Papas</option>
+                                            <option value="./img/icons/vegetal.png">Pepino</option>
+                                            <option value="./img/icons/vegetal.png">Remolacha</option>
+                                            <option value="./img/icons/vegetal.png">Repollo</option>
+                                            <option value="./img/icons/vegetal.png">Zanahoria</option>
+                                            <option value="./img/icons/vegetal.png">Rucula</option>
+                                            <option value="./img/icons/vegetal.png">Morron</option>
+                                            <option value="./img/icons/vegetal.png">Otra Verdura</option>
+                                        </optgroup>
+                                        <optgroup label="Carnes">
+                                            <option value="./img/icons/carne.png">Carne de ternera</option>
+                                            <option value="./img/icons/carne.png">Carne de cerdo</option>
+                                            <option value="./img/icons/carne.png">Nalga</option>
+                                            <option value="./img/icons/carne.png">Bola de lomo</option>
+                                            <option value="./img/icons/carne.png">Peceto</option>
+                                            <option value="./img/icons/carne.png">Bife de chorizo</option>
+                                            <option value="./img/icons/carne.png">Peyeto</option>
+                                            <option value="./img/icons/carne.png">Vacio</option>
+                                            <option value="./img/icons/carne.png">Paleta</option>
+                                            <option value="./img/icons/carne.png">Otra carne</option>
+                                        </optgroup>
+                                        <optgroup label="Aves">
+                                            <option value="./img/icons/aves.png">Muslo de Pollo</option>
+                                            <option value="./img/icons/aves.png">Pollo entero</option>
+                                            <option value="./img/icons/aves.png">Pechuga de pollo</option>
+                                            <option value="./img/icons/aves.png">Alitas</option>
+                                            <option value="./img/icons/aves.png">Otra carne de ave</option>
+                                        </optgroup>
+                                        <optgroup label="Pescados">
+                                            <option value="./img/icons/pescado.png">Salmon</option>
+                                            <option value="./img/icons/pescado.png">Dorado</option>
+                                            <option value="./img/icons/pescado.png">Merluza</option>
+                                            <option value="./img/icons/pescado.png">Calamar</option>
+                                            <option value="./img/icons/pescado.png">Otra carne de pescado</option>
+                                        </optgroup>
+                                        <optgroup label="Pastas">
+                                            <option value="./img/icons/pasta.png">Espqguetis</option>
+                                            <option value="./img/icons/pasta.png">Mostacholes</option>
+                                            <option value="./img/icons/pasta.png">Coditos</option>
+                                            <option value="./img/icons/pasta.png">Ravioles</option>
+                                            <option value="./img/icons/pasta.png">Ñoquis</option>
+                                            <option value="./img/icons/pasta.png">Tallarines</option>
+                                            <option value="./img/icons/pasta.png">Lasagña</option>
+                                            <option value="./img/icons/pasta.png">Canelones</option>
+                                        </optgroup>
+                                        <optgroup label="Bebidas">
+                                            <option value="./img/icons/bebida.png">Agua</option>
+                                            <option value="./img/icons/bebida.png">Infusiones</option>
+                                            <option value="./img/icons/bebida.png">Sprite</option>
+                                            <option value="./img/icons/bebida.png">Coca Cola</option>
+                                            <option value="./img/icons/bebida.png">H20</option>
+                                            <option value="./img/icons/bebida.png">7Up</option>
+                                            <option value="./img/icons/bebida.png">Pepsi</option>
+                                            <option value="./img/icons/bebida.png">Baggio</option>
+                                            <option value="./img/icons/bebida.png">Bebida alcoholica</option>
+                                        </optgroup>
+                                        <optgroup label="Harinas y granos">
+                                            <option value="./img/icons/harina.png">Harina 000</option>
+                                            <option value="./img/icons/harina.png">Harina 0000</option>
+                                            <option value="./img/icons/harina.png">Harina de almendra</option>
+                                            <option value="./img/icons/harina.png">Levadura</option>
+                                            <option value="./img/icons/harina.png">Arroz integral</option>
+                                            <option value="./img/icons/harina.png">Lentejas</option>
+                                            <option value="./img/icons/harina.png">Arvejas</option>
+                                            <option value="./img/icons/harina.png">Semillas de Lino</option>
+                                            <option value="./img/icons/harina.png">Semillas de Girasol</option>
+                                            <option value="./img/icons/harina.png">Almendras</option>
+                                            <option value="./img/icons/harina.png">Nueces</option>
+                                        </optgroup>
+                                        <optgroup label="Lacteos">
+                                            <option value="./img/icons/lacteos.png">Queso</option>
+                                            <option value="./img/icons/lacteos.png">Yogurt</option>
+                                            <option value="./img/icons/lacteos.png">Leche</option>
+                                            <option value="./img/icons/lacteos.png">Manteca</option>
+                                            <option value="./img/icons/lacteos.png">Huevos</option>
+                                            <option value="./img/icons/lacteos.png">Helado</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="alert-msg" id="msg-select-pc">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label 
+                                    for="descripcion" 
+                                    class="col-form-label form-label">
+                                        <h3>Descripción: </h3>
+                                    </label>
+                                    <textarea 
+                                    class="form-control" 
+                                    id="descripcion-pc" 
+                                    name="descripcion-pc" 
+                                    autocomplete="off" 
+                                    rows="10" 
+                                    cols="25"></textarea>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <hr>
+                            <h5><span class="red">* Obligatorio</span></h5>
+                            <button 
+                            type="button" 
+                            id="submit-btn-pc" 
+                            class="btn btn-primary float-right">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!--FIN Shop-Form PC -->
+
+    </section>
+    <!--FIN Contenedor Maestro-->
+
+    <footer>Agus Surila (Auchan22) | 2021 | Reto 3 SH2021</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</body>
+</html>
